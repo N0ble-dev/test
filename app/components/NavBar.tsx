@@ -58,8 +58,10 @@ const NavBar = () => {
       className={`${
         isHome
           ? "text-white font-semibold placeholder:text-white "
-          : `  text-main2 font-semibold placeholder:text-white  ${isScrollingDown && "bg-white/80"}`
-      } fixed inset-0  max-h-[5rem] lg:max-h-[8rem]  z-[99]   py-4  bg-[#F5F5F5] flex flex-col gap-2  transition-all duration-300 ${
+          : `  text-main2 font-semibold placeholder:text-white  ${
+              isScrollingDown && "bg-white/80"
+            }`
+      } fixed inset-0  max-h-[5rem] lg:max-h-[8rem]  z-[99]   md:py-4 py-0  bg-[#F5F5F5] flex flex-col gap-2  transition-all duration-300 ${
         isScrollingDown
           ? " lg:translate-y-[-80%] translate-y-[-101%]"
           : !isTopPage && !isScrollingDown
@@ -68,8 +70,11 @@ const NavBar = () => {
       }`}
     >
       <nav className=" flex flex-col">
-        <MaxWidthWrapper noPadding className="  w-full flex justify-between items-center">
-          <div className=" lg:mx-0 m-auto">
+        <MaxWidthWrapper
+          noPadding
+          className="  w-full flex justify-between items-center"
+        >
+          <div className=" lg:mx-0 md:m-auto m-0">
             <Logo />
           </div>
           <div className=" lg:flex hidden items-center ">
@@ -93,11 +98,19 @@ const NavBar = () => {
               <Search />
             </div>
             <div className=" lg:block hidden w-32 m-auto h-20 relative">
-              <Image src="/CATazine.svg" className=" object-contain" fill alt="logo" />
+              <Image
+                src="/CATazine.svg"
+                className=" object-contain"
+                fill
+                alt="logo"
+              />
             </div>
             <div className="flex   ml-auto items-center gap-2">
               <BookmarkIcon />
-              <ModalCustom btn={<Button>Subscribe</Button>} content={<Subscribe />} />
+              <ModalCustom
+                btn={<Button>Subscribe</Button>}
+                content={<Subscribe />}
+              />
             </div>
           </MaxWidthWrapper>
         </div>
